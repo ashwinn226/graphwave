@@ -5,7 +5,7 @@ import graphwave
 import math
 import networkx as nx
 import numpy as np
-from shapes import *
+from graphwave.shapes.shapes import *
 from graphwave.utils.utils import *
 
 
@@ -76,7 +76,7 @@ def build_structure(width_basis, basis_type, list_shapes, start=0,
         for p in range(add_random_edges):
             src, dest = np.random.choice(nx.number_of_nodes(basis),
                                          2, replace=False)
-            print src, dest
+            print (src, dest)
             basis.add_edges_from([(src, dest)])
     if plot is True: plot_networkx(basis, role_id)
 
