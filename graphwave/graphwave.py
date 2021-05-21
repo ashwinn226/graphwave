@@ -118,8 +118,8 @@ def graphwave_alg(graph, time_pnts, taus= 'auto',
             except:
                 l1 = np.sort(sc.sparse.linalg.eigsh(lap, 5,  which='SM',return_eigenvectors=False))[1]
         else:
-            # l1 = 1.0 / graph.number_of_nodes()
-            l1 = 1.0 / graph.N
+            l1 = 1.0 / graph.number_of_nodes()
+            # l1 = 1.0 / graph.N
         smax = -np.log(ETA_MIN) * np.sqrt( 0.5 / l1)
         smin = -np.log(ETA_MAX) * np.sqrt( 0.5 / l1)
         taus = np.linspace(smin, smax, nb_filters)
